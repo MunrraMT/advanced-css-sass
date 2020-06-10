@@ -1,18 +1,23 @@
+// start of variables
 $color-primary: #55c57a;
 $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
 $color-grey-dark: #777;
+$color-black: #000;
 $color-white: #fff;
+// end of variables
 
-/* classes gerais */
+// start of global classes
 *, *::after, *::before {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
 }
+
 html {
     font-size: 62.5%;
 }
+
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
@@ -22,62 +27,70 @@ body {
     padding: 3rem;
     box-sizing: border-box;
 }
-/* end of classes gerais */
+// end of global classes
 
-/* hero */
+// start of header section
 .header {
     height: 95vh;
+
     background-image: linear-gradient(
         to right bottom, 
         rgba($color-primary-light, 0.8), 
         rgba($color-primary-dark, 0.8)), 
         url(../img/hero.jpg);
+
     background-size: cover;
     background-position: top;
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     position: relative;
+
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 3.5rem;
+    }
+
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }   
 }
-.header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
-}
-.header__logo {
-    height: 3.5rem;
-}
-.header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-.header__heading {
+
+.heading__primary {
     color: $color-white;
     text-transform: uppercase;
     backface-visibility: hidden;
     margin-bottom: 6rem;
+
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation-name: moveInLeft;
+        animation-duration: 2s;
+        animation-timing-function: ease-out;
+    }
+
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.7rem;
+        animation-name: moveInRigth;
+        animation-duration: 2s;
+        animation-timing-function: ease-out;
+    }
 }
-.header__heading--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation-name: moveInLeft;
-    animation-duration: 2s;
-    animation-timing-function: ease-out;
-    /* animation-delay: 3s; */
-    /* animation-iteration-count: 3; */
-}
-.header__heading--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.7rem;
-    animation-name: moveInRigth;
-    animation-duration: 2s;
-    animation-timing-function: ease-out;
-}
+
 @keyframes moveInLeft {
     0% {
         opacity: 0;
@@ -91,6 +104,7 @@ body {
         transform: translateX(0);
     }
 }
+
 @keyframes moveInRigth {
     0% {
         opacity: 0;
@@ -104,6 +118,7 @@ body {
         transform: translateX(0);
     }
 }
+
 @keyframes moveInBottom {
     0% {
         opacity: 0;
@@ -114,53 +129,60 @@ body {
         transform: translatey(0);
     }
 }
-.btn:link, .btn:visited {
-    a {
-        font-size: 2rem;
-    }
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    transition: all 0.2s;
-    position: relative;
-}
-.btn:hover {
-    transform: translateY(-0.3rem);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-.btn:active {
-    transform: translateY(-0.1rem);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
-.btn--white {
-    background-color: $color-white;
-    color: $color-grey-dark;
-    font-size: 1.5rem;
-}
-.btn::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all 0.4s;
-}
-.btn--white::after {
-    background-color: $color-white;
-}
-.btn:hover::after {
-    transform: scaleX(1.5) scaleY(1.6);
-    opacity: 0;
-}
-.btn--animated {
-    animation: moveInBottom 0.5s ease-out 0.75s;
-    animation-fill-mode: backwards;
-}
-/* end of hero */
 
+.btn {    
+    
+    &:link, &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all 0.2s;
+        position: relative;
+    }
+
+    &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 10px 20px rgba($color-black, 0.2);
+        
+        &::after {
+            transform: scaleX(1.5) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+    &:active {
+        transform: translateY(-0.1rem);
+        box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    }
+
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+        font-size: 1.5rem;
+
+        &::after {
+            background-color: $color-white;
+        }
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.4s;
+    }
+
+    &--animated {
+        animation: moveInBottom 0.5s ease-out 0.75s;
+        animation-fill-mode: backwards;
+    }
+}
+// end of header section
