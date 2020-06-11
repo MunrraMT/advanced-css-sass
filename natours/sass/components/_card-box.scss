@@ -1,5 +1,7 @@
 .card {
-    height: 50rem;
+
+    // functionality
+    height: 52rem;
     width: 100%;
     perspective: 150rem;
     
@@ -7,24 +9,24 @@
         transform: rotateY(180deg);
     }
     
-    &__side {
-        color: #fff;
-        font-size: 2rem;        
+    &__side {      
         position: relative;
         width: 100%;
         height: 100%;
-        transition: all 1s ease;
+        transition: all 0.8s ease;
         transform-style: preserve-3d;
         box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+        border-radius: 10px;
         
         &--front, &--back {
+            border-radius: 10px;
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             backface-visibility: hidden;
-            border-radius: 3px;
+            overflow: hidden;
         }
         
         &--front {
@@ -39,5 +41,70 @@
                 background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark)
             }
         }
-    }    
+    }
+
+    // front side styling
+    &__picture {
+        background-size: cover;
+        height: 23rem;
+        background-blend-mode: color;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+        &--1 {
+            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(/natours/img/nat-5.jpg);
+        }
+
+        &--2 {
+            background-image: url(/natours/img/nat-6.jpg);
+        }
+
+        &--3 {
+            background-image: url(/natours/img/nat-7.jpg);
+        }
+    }
+
+    &__heading {
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: $color-white;
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+        width: 75%;
+    }
+
+    &__heading-span {
+        padding: 1rem 1.5rem;
+        box-decoration-break: clone;
+        font-weight: 500;
+
+        &--1 {
+            background-image: linear-gradient(
+                to right bottom, 
+                rgba($color-secondary-light, 0.85), 
+                rgba($color-secondary-dark, 0.85));
+        }
+    }
+
+    &__details {
+        padding: 3rem;
+        
+        ul {
+            list-style-type: none;
+            width: 80%;
+            margin: 0 auto;
+
+            li {
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $color-grey-light-2;
+                }
+            }
+        }
+    }
 }
