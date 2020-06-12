@@ -7,6 +7,7 @@
     padding: 6rem;
     font-size: $default-font-size;
     transform: skewX(-12deg);
+    transition: all 0.2s;
 
     & > * {
         transform: skewX(12deg);
@@ -21,13 +22,51 @@
         clip-path: circle(50%);
         // transform: translateX(-3rem);
         margin-right: 3rem;
+        position: relative;
     }
-
+    
     &__img {
-        height: 100%;
+        height: 140%;
+        width: 140%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+        transition: all 0.5s;
+    }
+    
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        transition: all 0.5s;
+        backface-visibility: hidden;
     }
 
     &__text {
 
+    }
+
+    &:hover {
+        box-shadow: 0 3rem 6rem rgba($color-black, 0.3);
+        transform: skewX(-12deg) translateY(-5px);
+    }
+
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__img {
+        height: 110%;
+        width: 110%;
+        filter: blur(3px) brightness(80%);
     }
 }
