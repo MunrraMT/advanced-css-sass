@@ -13,3 +13,5 @@ https://munrramt.github.io/advanced-css-sass/
 ## Projetos do Curso
 
 1 - [Natours Project](https://munrramt.github.io/advanced-css-sass/natours/index.html)
+
+2 - [Natours Responsive Project](https://munrramt.github.io/advanced-css-sass/natours/index.html)
