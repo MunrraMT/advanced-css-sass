@@ -33,6 +33,18 @@
 
 html {
   font-size: 62.5%; }
+  @media screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+  @media screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media screen and (max-width: 37.5em) {
+    html {
+      font-size: 30%; } }
 
 body {
   font-family: "Lato", sans-serif;
