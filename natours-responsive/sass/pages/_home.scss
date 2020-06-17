@@ -2,6 +2,12 @@
     background-color: $color-grey-light-1;
     padding: 25rem 0;
     margin-top: -20vh;
+
+    // width < 900
+    @include respond(tab-port) {
+        padding: 20rem 0;
+        margin-top: -10vh;
+    }
 }
 .section-features {
     padding: 20rem 0;
@@ -17,22 +23,42 @@
     & > * {
         transform: skewY(7deg);
     }
+
+    // width < 900
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
 }
 
 .section-tours {
     background-color: $color-grey-light-1;
     padding: 25rem 0 15rem 0;
     margin-top: -12rem;
+
+    // width < 900
+    @include respond(tab-port) {
+        padding: 20rem 0 10rem 0;
+    }
 }
 
 .section-stories {
     position: relative;
     padding: 15rem 0; 
+
+    // width < 900
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
 }
 
 .section-book {
     padding: 15rem 0;
     background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+
+    // width < 900
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
 }
 
 .book {
