@@ -5,32 +5,31 @@
 }
 
 html {
-    // This defines what 1rem is
+    // This defines what 1rem = 10px
     font-size: 62.5%;
 
+    // width > 1800
     @include respond(big-desktop) {
         font-size: 75%;
     }
 
+    // width < 1200
     @include respond(tab-land) {
         font-size: 56.25%;
     }
 
+    // width < 900
     @include respond(tab-port) {
         font-size: 50%;
-    }
-
-    @include respond(phone) {
-        font-size: 30%;
     }
 }
 
 body {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    /* font-size: 16px; */
-    line-height: 1.7;
-    color: $color-grey-dark;
-    padding: 3rem;
     box-sizing: border-box;
+    padding: 3rem;
+
+    // width < 900
+    @include respond(tab-port) {
+        padding: 0;
+    }
 }

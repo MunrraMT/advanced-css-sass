@@ -3,6 +3,16 @@
     padding: 10rem 0;
     font-size: 1.4rem;
 
+    // width < 900
+    @include respond(tab-port) {
+        padding: 8rem 0;
+    }
+
+    // width < 600
+    @include respond(phone) {
+        
+    }
+
     &__logo-box {
         text-align: center;
         margin-bottom: 8rem;
@@ -17,6 +27,12 @@
         border-top: 1px solid $color-grey-dark;
         padding-top: 2rem;
         display: inline-block;
+
+        // width < 900
+        @include respond(tab-port) {
+            width: 100%;
+            text-align: center;
+        }
     }
 
     &__list {
@@ -55,5 +71,11 @@
         width: 80%;
         float: right;
         text-align: justify;
+
+        // width < 900
+        @include respond(tab-port) {
+            width: 100%;
+            float: none;
+        }
     }
 }
