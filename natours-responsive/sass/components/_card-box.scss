@@ -158,4 +158,69 @@
         font-weight: 100;
     }
     // end of back side styling
+
+    // width < 900
+    @include respond(tab-port) {
+
+        // start of functionality
+        height: auto;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+        
+        &:hover &__side{
+            transform: rotateY(0);
+        }
+        
+        &__side {
+            position: relative;
+            width: 100%;
+            height: auto;
+            
+            &--front, &--back {
+                position: relative;
+                height: auto;
+                overflow: hidden;
+            }
+            
+            &--back {
+                transform: rotateY(0);
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+                border-top-right-radius: 0;
+                border-top-left-radius: 0;
+            }
+
+            &--front {
+                clip-path: polygon(0 0, 100% 0, 100% 91%, 0 100%);
+                margin-bottom: -5rem;
+                padding-bottom: 5rem;
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+        // end of functionality
+
+        // start of front side styling
+        &__details {
+            padding: 0 3rem;
+        }
+        // end of front side styling
+    
+        // start of back side styling
+        &__cta {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0);
+            width: 100%;
+            padding: 7rem 4rem 4rem 4rem;
+        }
+    
+        &__price-box {
+            margin-bottom: 3rem;
+        }
+    
+        &__price-value {
+            font-size: 4rem;
+        }
+        // end of back side styling
+    }
 }

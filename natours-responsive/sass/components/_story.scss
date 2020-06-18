@@ -9,8 +9,24 @@
     transform: skewX(-12deg);
     transition: all 0.2s;
 
+    // width < 900
+    @include respond(tab-port) {
+        width: 100%;
+        padding: 4rem;
+    }
+
+    // width < 600
+    @include respond(phone) {
+        transform: skewX(0);
+    }
+
     & > * {
         transform: skewX(12deg);
+
+        // width < 600
+        @include respond(phone) {
+            transform: skewX(0);
+        }
     }
 
     &__shape {
@@ -20,7 +36,6 @@
         float: left;
         shape-outside: circle(50%);
         clip-path: circle(50%);
-        // transform: translateX(-3rem);
         margin-right: 3rem;
         position: relative;
     }
@@ -50,13 +65,14 @@
         backface-visibility: hidden;
     }
 
-    &__text {
-
-    }
-
     &:hover {
         box-shadow: 0 3rem 6rem rgba($color-black, 0.3);
         transform: skewX(-12deg) translateY(-5px);
+
+        // width < 600
+        @include respond(phone) {
+            transform: skewX(0) translateY(0);
+        }
     }
 
     &:hover &__caption {
