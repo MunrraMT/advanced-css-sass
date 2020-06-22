@@ -17,16 +17,24 @@
         rgba($color-primary-dark, 0.8)), 
         url(/natours/img/nat-4.jpg);
     background-size: cover;    
-    transform: skewY(-7deg);
     margin-top: -12rem;
 
+    @supports(clip-path: polygon(0 0)) {
+        transform: skewY(-7deg);
+    }
+
     & > * {
-        transform: skewY(7deg);
+        @supports(clip-path: polygon(0 0)) {
+            transform: skewY(7deg);
+        }
     }
 
     // width < 900
     @include respond(tab-port) {
-        padding: 10rem 0;
+
+        @supports(clip-path: polygon(0 0)) {
+            padding: 10rem 0;
+        }
     }
 }
 

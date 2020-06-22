@@ -272,8 +272,10 @@ body {
   .card__picture {
     background-size: cover;
     height: 23rem;
-    background-blend-mode: color;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    background-blend-mode: color; }
+    @supports (clip-path: polygon(0 0)) {
+      .card__picture {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); } }
     .card__picture--1 {
       background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(/natours/img/nat-5.jpg); }
     .card__picture--2 {
@@ -305,7 +307,10 @@ body {
     .card__details ul {
       list-style-type: none;
       width: 80%;
-      margin: 0 auto; }
+      margin: 3rem auto; }
+      @supports (clip-path: polygon(0 0)) {
+        .card__details ul {
+          margin: 0 auto; } }
       .card__details ul li {
         text-align: center;
         font-size: 1.5rem;
@@ -345,9 +350,11 @@ body {
           overflow: hidden; }
         .card__side--back {
           transform: rotateY(0);
-          clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
           border-top-right-radius: 0;
           border-top-left-radius: 0; }
+          @supports (clip-path: polygon(0 0)) {
+            .card__side--back {
+              clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%); } }
         .card__side--front {
           clip-path: polygon(0 0, 100% 0, 100% 91%, 0 100%);
           margin-bottom: -5rem;
@@ -535,6 +542,10 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s; }
+  @supports (backdrop-filter: blur(10px)) {
+    .popup {
+      backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.3); } }
   .popup__content {
     position: absolute;
     top: 50%;
@@ -748,18 +759,23 @@ body {
     width: calc(3 * ((100% - (3 * 6rem)) / 4) + (2 * 6rem)); }
 
 .header {
-  height: 95vh;
+  height: 100vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(/natours-responsive/img/hero-small.jpg);
   background-size: cover;
   background-position: top;
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-resolution: 284dpi), (min-width: 75em) {
+  position: relative; }
+  @supports (clip-path: polygon(0 0)) {
+    .header {
+      clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+      height: 95vh; } }
+  @media (min-resolution: 2dppx) and (min-width: 37.5em), (min-resolution: 3dppx), (min-width: 75em) {
     .header {
       background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8)), url(/natours-responsive/img/hero.jpg); } }
   @media screen and (max-width: 37.5em) {
-    .header {
-      clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } }
+    @supports (clip-path: polygon(0 0)) {
+      .header {
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+        height: 95vh; } } }
   .header__logo-box {
     position: absolute;
     top: 4rem;
@@ -916,13 +932,17 @@ body {
   padding: 20rem 0;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(/natours/img/nat-4.jpg);
   background-size: cover;
-  transform: skewY(-7deg);
   margin-top: -12rem; }
-  .section-features > * {
-    transform: skewY(7deg); }
-  @media screen and (max-width: 56.25em) {
+  @supports (clip-path: polygon(0 0)) {
     .section-features {
-      padding: 10rem 0; } }
+      transform: skewY(-7deg); } }
+  @supports (clip-path: polygon(0 0)) {
+    .section-features > * {
+      transform: skewY(7deg); } }
+  @media screen and (max-width: 56.25em) {
+    @supports (clip-path: polygon(0 0)) {
+      .section-features {
+        padding: 10rem 0; } } }
 
 .section-tours {
   background-color: #ececec;

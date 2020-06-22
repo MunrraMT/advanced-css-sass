@@ -57,7 +57,10 @@
         background-size: cover;
         height: 23rem;
         background-blend-mode: color;
-        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+        @supports(clip-path: polygon(0 0)) {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
 
         &--1 {
             background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(/natours/img/nat-5.jpg);
@@ -117,7 +120,11 @@
         ul {
             list-style-type: none;
             width: 80%;
-            margin: 0 auto;
+            margin: 3rem auto;
+
+            @supports(clip-path: polygon(0 0)) {
+                margin: 0 auto;
+            }
 
             li {
                 text-align: center;
@@ -183,9 +190,12 @@
             
             &--back {
                 transform: rotateY(0);
-                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
                 border-top-right-radius: 0;
                 border-top-left-radius: 0;
+
+                @supports(clip-path: polygon(0 0)) {
+                    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+                }
             }
 
             &--front {
