@@ -14,4 +14,6 @@ https://munrramt.github.io/advanced-css-sass/
 
 1 - [Natours Project](https://munrramt.github.io/advanced-css-sass/natours/index.html)
 
-2 - [Natours Responsive Project](https://munrramt.github.io/advanced-css-sass/natours/index.html)
+2 - [Natours Responsive Project](https://munrramt.github.io/advanced-css-sass/natours-responsive/index.html)
+
+2 - [Trillo Project](https://munrramt.github.io/advanced-css-sass/trillo/index.html)
