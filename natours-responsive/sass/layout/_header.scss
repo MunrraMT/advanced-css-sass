@@ -16,7 +16,7 @@
         height: 95vh;
     }
 
-    @media (min-resolution: 2dppx) and (min-width: 37.5em), (min-resolution: 3dppx), (min-width: 75em) {        
+    @media only screen and (min-resolution: 2dppx) and (min-width: 37.5em), only screen and (min-resolution: 3dppx), only screen and (min-width: 75em) {        
         background-image: linear-gradient(
             to right bottom, 
             rgba($color-secondary-light, 0.8), 
