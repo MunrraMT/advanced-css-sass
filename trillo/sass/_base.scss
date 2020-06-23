@@ -27,6 +27,8 @@ $Grey-dark-3: #999;
     --color-Grey-dark-1: #333;
     --color-Grey-dark-2: #777;
     --color-Grey-dark-3: #999;
+
+    --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
 }
 // end of css variables
 
@@ -58,6 +60,6 @@ body {
         var(--color-Primary-dark));
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 100vh;
+    min-height: calc(100vh - 8rem);
 }
 // end of globals settings
