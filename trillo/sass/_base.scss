@@ -1,16 +1,7 @@
 // start of sass variables
-$color-Primary: #eb2f64;
-$Primary-light: #FF3366;
-$Primary-dark: #BA265D;
-
-$Grey-light-1: #faf9f9;
-$Grey-light-2: #f4f2f2;
-$Grey-light-3: #f0eeee;
-$Grey-light-4: #ccc;
-
-$Grey-dark-1: #333;
-$Grey-dark-2: #777;
-$Grey-dark-3: #999;
+$bp-largest: 75em; //1200px
+$bp-large: 68.75em; //1100px
+$bp-medium: 56.25em; //900px
 // end of sass variables
 
 // start of css variables
@@ -50,6 +41,11 @@ html {
 
     // 1rem = 10px, 10px/16px = 62.5%
     font-size: 62.5%; 
+
+    @media only screen and (max-width: $bp-large) {
+        // 1rem = 10px, 10px/16px = 62.5%
+        font-size: 50%; 
+    }
 }
 
 body {
