@@ -217,10 +217,15 @@ body {
   background-color: transparent;
   cursor: pointer;
   transition: all 0.2s; }
+  .btn-inline span {
+    margin-left: 3px;
+    transition: margin-left 0.2s; }
   .btn-inline:focus, .btn-inline:hover {
     color: var(--color-Grey-dark-1);
     outline: none;
     animation: pulsate 1s infinite; }
+    .btn-inline:focus span, .btn-inline:hover span {
+      margin-left: 8px; }
 
 @keyframes pulsate {
   0% {
@@ -232,6 +237,9 @@ body {
   100% {
     transform: scale(1);
     box-shadow: none; } }
+
+.paragraph {
+  text-align: justify; }
 
 .paragraph:not(:last-of-type) {
   margin-bottom: 2rem; }
@@ -265,6 +273,7 @@ body {
 .recommend {
   font-size: 1.3rem;
   color: var(--color-Grey-dark-3);
+  overflow: hidden;
   display: flex;
   align-items: center; }
   .recommend__count {
@@ -277,6 +286,49 @@ body {
     border: 3px solid #fff; }
     .recommend__photo:not(:last-of-type) {
       margin-right: -1.5rem; }
+
+.review {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  overflow: hidden;
+  text-align: justify; }
+  .review::before {
+    content: "\201C";
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+    line-height: 1;
+    font-size: 20rem;
+    color: var(--color-Grey-light-2);
+    font-family: 'Catamaran', sans-serif; }
+  .review__text {
+    margin-bottom: 2rem;
+    position: relative; }
+  .review__user {
+    display: flex;
+    align-items: center; }
+  .review__photo {
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%;
+    margin-right: 1.5rem; }
+  .review__user-box {
+    margin-right: auto; }
+  .review__user-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem; }
+  .review__user-date {
+    font-size: 1rem;
+    color: var(--color-Grey-dark-3); }
+  .review__rating {
+    color: var(--color-Primary);
+    font-size: 2.2rem;
+    font-weight: 300; }
 
 .container {
   max-width: 120rem;
@@ -309,13 +361,13 @@ body {
   flex: 1; }
 
 .detail {
+  font-size: 1.4rem;
   display: flex;
   padding: 4.5rem;
   background-color: var(--color-Grey-light-1);
   border-bottom: var(--line); }
 
 .description {
-  font-size: 1.4rem;
   background-color: #fff;
   box-shadow: var(--shadow-light);
   padding: 3rem;
@@ -323,5 +375,7 @@ body {
   margin-right: 4.5rem; }
 
 .user-reviews {
-  background-color: yellowgreen;
-  flex: 1; }
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }

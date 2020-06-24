@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet"> 
         
         <link rel="stylesheet" href="css/style.css">
         <link rel="shortcut icon" type="image/png" href="img/favicon.png">
@@ -13,9 +15,7 @@
     </head>
     <body>
         <div class="container">
-
             <header class="header">
-
                 <img src="./img/logo.png" alt="trillo logo" class="logo">
 
                 <form action="#" class="search">
@@ -53,13 +53,11 @@
                         </span>
                     </div>
                 </nav>
-
             </header>
 
             <div class="content">
                 <nav class="sidebar">
                     <ul class="side-nav">
-
                         <li class="side-nav__item side-nav__item--active">
                             <a href="#" class="side-nav__link">
                                 <svg class="side-nav__icon">
@@ -109,11 +107,9 @@
                     <div class="legal">
                         &copy; 2017 by trillo. All right reserved.
                     </div>
-
                 </nav>
 
                 <main class="hotel-view">
-
                     <div class="gallery">
                         <figure class="gallery__item">
                             <picture>
@@ -228,17 +224,59 @@
                                     </figure>
                                 </div>
                             </div>
-
                         </div>
+
                         <div class="user-reviews">
-                            user reviews
+                            <figure class="review">
+                                <blockquote class="review__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi, totam, itaque officia ex.
+                                </blockquote>
+                                <figcaption class="review__user">
+                                    <img src="./img/user-1.jpg" alt="User 1" class="review__photo">
+                                    <div class="review__user-box">
+                                        <p class="review__user-name">
+                                            Nick Smith
+                                        </p>
+                                        <p class="review__user-date">
+                                            Feb 23rd, 2017
+                                        </p>
+                                    </div>
+                                    <div class="review__rating">
+                                        7.8
+                                    </div>
+                                </figcaption>
+                            </figure>
+
+                            <figure class="review">
+                                <blockquote class="review__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga doloremque architecto dicta animi, totam, itaque officia ex.
+                                </blockquote>
+                                <figcaption class="review__user">
+                                    <img src="./img/user-2.jpg" alt="User 2" class="review__photo">
+                                    <div class="review__user-box">
+                                        <p class="review__user-name">
+                                            Mary Thomas
+                                        </p>
+                                        <p class="review__user-date">
+                                            Set 13rd, 2017
+                                        </p>
+                                    </div>
+                                    <div class="review__rating">
+                                        9.3
+                                    </div>
+                                </figcaption>
+                            </figure>
+
+                            <button class="btn-inline">
+                                Show all 
+                                <span>
+                                    &rarr;
+                                </span>
+                            </button>
                         </div>
                     </div>
-
                 </main>
-
             </div>
-
         </div>
     </body>
 </html>
