@@ -59,11 +59,14 @@ body {
     fill: #c69963;
     width: 4.5rem;
     height: 4.5rem;
-    grid-row: 1 / span 2;
-    transform: translateY(-1rem); }
+    align-items: center; }
+  .feature h4 {
+    align-self: center;
+    text-align: justify; }
   .feature__text {
     font-size: 1.7rem;
-    text-align: justify; }
+    text-align: justify;
+    grid-column: 2/3; }
 
 .story__pictures {
   background-color: #c69963;

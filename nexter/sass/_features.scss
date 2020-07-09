@@ -20,12 +20,26 @@
         fill: $color-primary;
         width: 4.5rem;
         height: 4.5rem;
-        grid-row: 1 / span 2;
-        transform: translateY(-1rem);
+
+        //solução do professor
+        // grid-row: 1 / span 2; 
+        // transform: translateY(-1rem);
+
+        // minha solução
+        align-items: center;
+    }
+
+    & h4 {
+        // minha solução
+        align-self: center;
+        text-align: justify;
     }
 
     &__text {
         font-size: 1.7rem;
         text-align: justify;
+
+        //minha solução
+        grid-column: 2/3; 
     }
 }
