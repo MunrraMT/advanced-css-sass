@@ -200,8 +200,47 @@ body {
     grid-column: 1/-1; }
 
 .gallery {
-  background-color: #54483A;
-  grid-column: full-start / full-end; }
+  background-color: #f9f7f6;
+  grid-column: full-start / full-end;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(7, 5vw);
+  gap: 1.5rem;
+  grid-template-areas: "a a b b b c d d" "a a b b b c d d" "e e b b b f f g" "e e h h i f f g" "e e h h j j j g" "k l l m j j j n"  "k l l m j j j n";
+  padding: 1.5rem; }
+  .gallery__item--1 {
+    grid-area: a; }
+  .gallery__item--2 {
+    grid-area: b; }
+  .gallery__item--3 {
+    grid-area: c; }
+  .gallery__item--4 {
+    grid-area: d; }
+  .gallery__item--5 {
+    grid-area: e; }
+  .gallery__item--6 {
+    grid-area: h; }
+  .gallery__item--7 {
+    grid-area: i; }
+  .gallery__item--8 {
+    grid-area: f; }
+  .gallery__item--9 {
+    grid-area: g; }
+  .gallery__item--10 {
+    grid-area: k; }
+  .gallery__item--11 {
+    grid-area: l; }
+  .gallery__item--12 {
+    grid-area: m; }
+  .gallery__item--13 {
+    grid-area: j; }
+  .gallery__item--14 {
+    grid-area: n; }
+  .gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; }
 
 .footer {
   background-color: #101d2c;
